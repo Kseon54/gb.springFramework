@@ -6,10 +6,10 @@
     <title>Add product</title>
 </head>
 <body>
-<form action="<c:url value="/product/addProduct"/>" th:object="${product}">
+<form action="<c:url value="/product/addProduct"/>">
     <%--    <p>Id: <input type="number" th:field="*{id}" value="0"/></p>--%>
-    <p>Title: <input type="text" name="title" th:field="*{title}"/></p>
-    <p>Cost: <input type="number" name="cost" th:field="*{cost}"/></p>
+    <p>Title: <input type="text" name="title"/></p>
+    <p>Cost: <input type="number" name="cost"/></p>
     <p><input type="submit" value="Add"/> <input type="reset" value="Reset"/></p>
 </form>
 </body>

@@ -23,6 +23,6 @@
 
 </table>
 
-<a href="<c:url value="/product"/>">Add product</a>
+<a href="<c:url value="/product/add"/>">Add product</a>
 </body>
 </html>

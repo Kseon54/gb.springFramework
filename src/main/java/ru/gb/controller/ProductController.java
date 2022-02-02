@@ -17,7 +17,7 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @GetMapping(path = "/add")
+    @GetMapping
     public String getAllProduct(Model model) {
         ArrayList<Product> list = productService.findAll();
         model.addAttribute("products", list);
@@ -32,9 +32,8 @@ public class ProductController {
         return "product/product";
     }
 
-    @GetMapping
+    @GetMapping("/add")
     public String openFormAddProduct(Model model) {
-        model.addAttribute("product", new Product());
         return "product/addProduct";
     }
 
