@@ -1,9 +1,7 @@
 package ru.gb.client;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.gb.main.Cart;
 import ru.gb.model.Product;
 import ru.gb.repository.ProductRepository;
 
@@ -22,7 +20,7 @@ public class ExecutorCommand {
     }
 
     public static void printProduct() {
-        List<Product> products = productRepository.getAll();
+        List<Product> products = productRepository.findAll();
         for (Product product : products) {
             System.out.println(product.getInfo());
         }
@@ -53,7 +51,7 @@ public class ExecutorCommand {
                 try {
                     long idProduct = Long.parseLong(strings[1]);
 
-                    Optional<Product> product = productRepository.getById(idProduct);
+                    Optional<Product> product = productRepository.findById(idProduct);
                     if (product.isPresent()) consoleClient.getCart().clearProduct(product.get());
                     else System.out.println("The product with this id was not found");
                 } catch (NumberFormatException e) {
@@ -92,7 +90,7 @@ public class ExecutorCommand {
     }
 
     public static void changingQuantityOfProduct(ConsoleClient consoleClient, long idProduct, int count) {
-        Optional<Product> product = productRepository.getById(idProduct);
+        Optional<Product> product = productRepository.findById(idProduct);
         if (product.isPresent()) consoleClient.getCart().changingQuantityOfProduct(product.get(), count);
         else System.out.println("The product with this id was not found");
     }

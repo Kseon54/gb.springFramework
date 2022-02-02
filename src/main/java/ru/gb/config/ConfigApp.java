@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 public class ConfigApp {
 
     public final static String VIEW_RESOLVER_PREFIX="WEB-INF/view/";
-    public final static String VIEW_RESOLVER_SUFFIX=".jsp/";
+    public final static String VIEW_RESOLVER_SUFFIX=".jsp";
     @Bean
     public ViewResolver viewResolver(){
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
