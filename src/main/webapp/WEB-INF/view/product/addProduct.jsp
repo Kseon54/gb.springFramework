@@ -6,7 +6,7 @@
     <title>Add product</title>
 </head>
 <body>
-<form action="<c:url value="/product/add"/>" th:object="${product}" method="post">
+<form action="<c:url value="/product/addProduct"/>" th:object="${product}">
     <%--    <p>Id: <input type="number" th:field="*{id}" value="0"/></p>--%>
     <p>Title: <input type="text" name="title" th:field="*{title}"/></p>
     <p>Cost: <input type="number" name="cost" th:field="*{cost}"/></p>

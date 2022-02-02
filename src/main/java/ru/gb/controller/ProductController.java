@@ -38,14 +38,12 @@ public class ProductController {
         return "product/addProduct";
     }
 
-    @PostMapping("/add")
-    public String addProduct(Model model) {
-        System.out.println("-------------------------------------------------------------------------------");
-        Product product = new Product(
-                (String) model.getAttribute("title"),
-                Double.parseDouble(model.getAttribute("cost").toString()));
+    @GetMapping("/addProduct")
+    public String addProduct(Model model,
+                             @RequestParam(name = "title") String title,
+                             @RequestParam(name = "cost") double cost) {
+        Product product = new Product(title, cost);
         productService.save(product);
-        ExecutorCommand.printProduct();
         return "product/product";
     }
 
