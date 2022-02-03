@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan("ru.gb")
 public class ConfigApp {
 
-    public final static String VIEW_RESOLVER_PREFIX="WEB-INF/view/";
+    public final static String VIEW_RESOLVER_PREFIX="/WEB-INF/view/";
     public final static String VIEW_RESOLVER_SUFFIX=".jsp";
     @Bean
     public ViewResolver viewResolver(){

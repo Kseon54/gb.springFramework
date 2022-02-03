@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.gb.client.ExecutorCommand;
 import ru.gb.model.Product;
 import ru.gb.service.ProductService;
 
@@ -38,12 +37,11 @@ public class ProductController {
     }
 
     @GetMapping("/addProduct")
-    public String addProduct(Model model,
-                             @RequestParam(name = "title") String title,
+    public String addProduct(@RequestParam(name = "title") String title,
                              @RequestParam(name = "cost") double cost) {
         Product product = new Product(title, cost);
         productService.save(product);
-        return "product/product";
+        return "redirect:" + "/product";
     }
 
 }
